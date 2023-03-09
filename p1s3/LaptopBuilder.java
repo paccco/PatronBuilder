@@ -1,17 +1,13 @@
-public abstract class LaptopBuilder implements Builder{
-    public void buildBateria(){
-        Builder.buildBateria();
-    }
+public class LaptopBuilder implements Builder{
+    String brand, type;
 
-    public void buildRam(){
-        Builder.buildRam();
-    }
+    @Override
+    public void buildBrand(String brand){ this.brand = brand; }
 
-    public void buildProcesador(){
-        Builder.buildProcesador();
+    @Override
+    public void buildType(String type){ this.type = type; }
+    
+    public SamsungLaptop getResult(){
+        return new SamsungLaptop(brand,type,buildRam(),buildBateria(),buildProcesador());
     }
-
-    public void buildBrand(){};
-    public void buildType(){};
-    public void getResult(){};
 }

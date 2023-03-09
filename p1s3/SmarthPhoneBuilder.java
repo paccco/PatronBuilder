@@ -1,4 +1,4 @@
-public abstract class SmarthPhoneBuilder implements Builder{
+public class SmarthPhoneBuilder implements Builder{
     public void buildBateria(){
         Builder.buildBateria();
     }

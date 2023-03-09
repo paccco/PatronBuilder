@@ -1,22 +1,24 @@
 interface Builder{
     Dispositivo dispo = new Dispositivo();
-    static void buildRam() {
+    default Ram buildRam() {
         Ram tarjetaRam = new Ram();
         tarjetaRam.run();
         dispo.ram=tarjetaRam;
+        return dispo.ram;
     }
-    static void buildBateria() {
+    default Bateria buildBateria() {
         Bateria bat = new Bateria();
         bat.run();
         dispo.bat=bat;
+        return dispo.bat;
     }
-    static void buildProcesador() {
+    default Procesador buildProcesador() {
         Procesador cpu = new Procesador();
         cpu.run();
         dispo.cpu=cpu;
+        return dispo.cpu;
     }
 
-    public void buildBrand();
-    public void buildType();
-    public void getResult();
+    public void buildBrand(String brand);
+    public void buildType(String type);
 }
