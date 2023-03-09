@@ -1,4 +1,3 @@
-package p1s3;
 import java.util.Random;
 
 public class Ram extends Thread {

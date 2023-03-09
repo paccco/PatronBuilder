@@ -1,7 +1,8 @@
-package p1s3;
-
 public class Dispositivo {
     private String brand, type;
+    Ram ram;
+    Procesador cpu;
+    Bateria bat;
 
     public Dispositivo () {
         this.brand = "N/A";
