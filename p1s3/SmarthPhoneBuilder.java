@@ -1,17 +1,34 @@
 public class SmarthPhoneBuilder implements Builder{
-    public void buildBateria(){
-        Builder.buildBateria();
+    private String brand, type;
+    private Ram ram;
+    private Bateria bateria;
+    private Procesador procesador;
+
+    @Override
+    public void buildBrand(String brand){ this.brand = brand; }
+
+    @Override
+    public void buildType(String type){ this.type = type; }
+
+    @Override
+    public void buildRam (Ram ram) {
+        this.ram = ram;
+        this.ram.start();
     }
 
-    public void buildRam(){
-        Builder.buildRam();
+    @Override
+    public void buildBateria (Bateria bateria) {
+        this.bateria = bateria;
+        this.bateria.start();
     }
 
-    public void buildProcesador(){
-        Builder.buildProcesador();
+    @Override
+    public void buildProcesador (Procesador procesador) {
+        this.procesador = procesador;
+        this.procesador.start();
     }
-
-    public void buildBrand(){};
-    public void buildType(){};
-    public void getResult(){};
+    
+    public SamsungSmarthPhone getResult(){
+        return new SamsungSmarthPhone(brand,type,ram,bateria,procesador);
+    }
 }

@@ -32,4 +32,9 @@ public class SamsungLaptop{
         return this.procesador;
     }
     
+    @Override
+    public String toString() {
+        return "\nDispositivo " + getType() + "\nRam: " +  getRam().toString() +
+                "\nBateria: " + getBateria().toString() + "\nProcesador: " + getProcesador().toString();
+    }
 }

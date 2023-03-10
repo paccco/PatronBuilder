@@ -1,13 +1,34 @@
 public class LaptopBuilder implements Builder{
-    String brand, type;
+    private String brand, type;
+    private Ram ram;
+    private Bateria bateria;
+    private Procesador procesador;
 
     @Override
     public void buildBrand(String brand){ this.brand = brand; }
 
     @Override
     public void buildType(String type){ this.type = type; }
+
+    @Override
+    public void buildRam (Ram ram) {
+        this.ram = ram;
+        this.ram.start();
+    }
+
+    @Override
+    public void buildBateria (Bateria bateria) {
+        this.bateria = bateria;
+        this.bateria.start();
+    }
+
+    @Override
+    public void buildProcesador (Procesador procesador) {
+        this.procesador = procesador;
+        this.procesador.start();
+    }
     
     public SamsungLaptop getResult(){
-        return new SamsungLaptop(brand,type,buildRam(),buildBateria(),buildProcesador());
+        return new SamsungLaptop(brand,type,ram,bateria,procesador);
     }
 }

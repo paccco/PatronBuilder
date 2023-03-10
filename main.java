@@ -8,7 +8,11 @@ public class main {
         director.constructLaptop(laptopB);
         director.constructSmartphone(phoneB);
 
-        // SamsungLaptop samsungLaptop = LaptopBuilder.getResult();
+        SamsungLaptop samsungLaptop = laptopB.getResult();
+        SamsungSmarthPhone samsungSmartPhone = phoneB.getResult();
+
+        System.out.println(samsungLaptop);
+        System.out.println(samsungSmartPhone);
 
     }
 }
