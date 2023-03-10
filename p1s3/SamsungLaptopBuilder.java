@@ -1,14 +1,14 @@
-public class LaptopBuilder implements Builder{
+public class SamsungLaptopBuilder implements Builder{
     private String brand, type;
     private Ram ram;
     private Bateria bateria;
     private Procesador procesador;
 
     @Override
-    public void buildBrand(String brand){ this.brand = brand; }
+    public void buildBrand(){ this.brand = "Samsung"; }
 
     @Override
-    public void buildType(String type){ this.type = type; }
+    public void buildType(){ this.type = "Laptop"; }
 
     @Override
     public void buildRam (Ram ram) {
@@ -29,6 +29,6 @@ public class LaptopBuilder implements Builder{
     }
     
     public SamsungLaptop getResult(){
-        return new SamsungLaptop(brand,type,ram,bateria,procesador);
+        return new SamsungLaptop(ram,bateria,procesador);
     }
 }

@@ -1,4 +1,4 @@
-public class SmarthPhoneBuilder implements Builder{
+public class SamsungSmarthPhoneBuilder implements Builder{
     private String brand, type;
     private Ram ram;
     private Bateria bateria;
@@ -29,6 +29,6 @@ public class SmarthPhoneBuilder implements Builder{
     }
     
     public SamsungSmarthPhone getResult(){
-        return new SamsungSmarthPhone(brand,type,ram,bateria,procesador);
+        return new SamsungSmarthPhone(ram,bateria,procesador);
     }
 }

@@ -1,15 +1,9 @@
-public class SamsungLaptop{
-    private String brand, type;
-    private Ram ram;
-    private Bateria bateria;
-    private Procesador procesador;
+public class SamsungLaptop extends Dispositivo{
 
-    public SamsungLaptop(String brand, String type, Ram ram, Bateria bat, Procesador proc) {
-        this.brand = brand;
-        this.type = type;
-        this.ram = ram;
-        this.procesador = proc;
-        this.bateria = bat;
+    public SamsungLaptop(Ram ram, Bateria bat, Procesador proc) {
+        super(ram,bat,proc);
+        this.brand = "Samsung";
+        this.type = "Laptop";
     }
 
     public String getBrand(){
