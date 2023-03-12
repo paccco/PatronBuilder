@@ -1,8 +1,7 @@
 interface Builder{
-
-    void buildRam();
-    void buildBateria();
-    void buildProcesador();
+    void buildRam(Ram ram);
+    void buildBateria(Bateria bateria);
+    void buildProcesador(Procesador proc);
 
     void buildBrand();
     void buildType();

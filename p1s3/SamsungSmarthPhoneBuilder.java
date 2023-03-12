@@ -5,10 +5,10 @@ public class SamsungSmarthPhoneBuilder implements Builder{
     private Procesador procesador;
 
     @Override
-    public void buildBrand(String brand){ this.brand = brand; }
+    public void buildBrand(){ this.brand = "Samasung"; }
 
     @Override
-    public void buildType(String type){ this.type = type; }
+    public void buildType(){ this.type = "SmarthPhone"; }
 
     @Override
     public void buildRam (Ram ram) {
