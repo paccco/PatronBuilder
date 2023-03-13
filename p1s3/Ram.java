@@ -3,22 +3,26 @@ import java.util.Random;
 public class Ram extends Thread {
     private static final int fallo = 1, porc = 10;
     private static Random random;
+    private final String tecnologia, capacidad;
 
-    public Ram () { random = new Random(); }
+    public Ram (String tecnologia, String capacidad) {
+        random = new Random();
+        this.tecnologia = tecnologia;
+        this.capacidad = capacidad;
+    }
 
-    // esto iría en builder para cada componente
-    /* static void buildRam () {
-        Ram tarjetaRam = new Ram();
-        tarjetaRam.start();
-    } */
+    @Override
+    public String toString() {
+        return tecnologia + " " + capacidad;
+    }
 
     @Override
     public void run() {
         int exito = random.nextInt(porc) + 1; // 1-10
         if ( exito >= fallo ) {
-            System.out.println("Tarjeta RAM creada");
+            System.out.println("Tarjeta RAM creada\n");
         } else{
-            System.out.println("Error en RAM");
+            System.out.println("Error en RAM\n");
         }
     }
 }
