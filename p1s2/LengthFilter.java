@@ -1,11 +1,16 @@
+/**
+ * Filtro que comprueba la longitud de la contraseña.
+ * Debe de ser mínimo de 8 caracteres
+ */
+
 package p1s2;
 
 public class LengthFilter implements Filter {
-    @Override
-    public boolean execute() {
-        String password = "Ejemplo";
+    private static final int LENGTHMIN = 8, LENGTHMAX = 16;
 
-        if (password.length() < 8) return false;
-        return true;
+    @Override
+    public boolean execute(String password) {
+        if (password.length() > LENGTHMIN && password.length() < LENGTHMAX) return true;
+        return false;
     }
 }

@@ -1,3 +1,8 @@
+/**
+ * Cadena de filtros que añade filtros indicados por el gestor y
+ * define un objetivo (target), que será la clase Password.
+ */
+
 package p1s2;
 import java.util.ArrayList;
 
@@ -19,19 +24,19 @@ public class FilterChain {
 
     // método donde se llama al ejecutar de cada filtro y de el objetivo
     public void execute() {
-        boolean correcto = true;
+        boolean error = false;
         String pass = target.getPassword();
         
         // filters
         for (Filter i : filters) {
-            if ( i.execute(pass) ) 
-                System.out.println("Filtro pasado");
-            else
-                correcto = false;
+            if ( !i.execute(pass) ){
+                target.setSecurity(error);
+                break;
+            } else
+                System.out.println ("filtro pasado!");
         }
         // target
-        if (correcto)
-            target.execute();
+        target.execute();
         
     }
 }

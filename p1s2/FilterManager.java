@@ -1,3 +1,8 @@
+/**
+ * Gestor de Filtros que pasará la solicitud del cliente (MainPassword)
+ * a la cadena de filtros (FilterChain) que él mismo creará con los filtros necesarios.
+ */
+
 package p1s2;
 
 public class FilterManager {
@@ -20,7 +25,7 @@ public class FilterManager {
         filterChain.addFilter(new SpecialCharFilter()); // CREAR
     }
 
-    // método que añade filtros concretos en un orden determinado y ejecuta la cadena
+    // añade los filtros necesarios en el orden necesario y ejecuta la cadena de filtros
     void filterRequest (String password) {
         addLengthFilter();
         addUpperCaseFilter();
